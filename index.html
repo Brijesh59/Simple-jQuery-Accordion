@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    body{
+      font-family: sans-serif;
+    }
+    h2{
+      width: 40%;
+      margin: 20px auto;
+      padding:10px;
+      background: #0080ff;
+      color: white;
+      border-radius: 4px;
+    }
+    h4{
+      color: #808080;
+    }
+    .container{
+      margin: 10vh auto;
+      width: 50%;
+      text-align: center;
+    }
+    .contents{
+      padding: 0px;
+      border: 1px solid #eee;
+      background: #f7f7f7;
+    }
+    p{
+      display: none;
+      background: white;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>jQuery Accordion</h2>
+    <div id="content1" class="contents">
+      <h4>Content1</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut odio perferendis aspernatur id velit. Nemo numquam qui hic asperiores assumenda. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, eveniet.</p>
+    </div>
+    <div id="content2" class="contents">
+      <h4>Content2</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, in quos eum dolor quaerat, vel provident vero saepe eligendi repellat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, eveniet.</p>
+    </div>
+    <div id="content3" class="contents">
+      <h4>Content3</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit assumenda libero eum ut vero, error aspernatur ipsam vel impedit, similique! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, eveniet.</p>
+    </div>
+    <div id="content4" class="contents">
+      <h4>Content4</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt nulla iste inventore, error minus odio mollitia nostrum doloribus vitae consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, eveniet.</p>
+    </div>
+  </div>
+<script type="text/javascript">
+  var newId, id, prev;
+  $(".contents").click(function(){
+
+    id = $(this).attr('id');
+    newId = '#' + id + '>p';
+
+    if(prev === id){
+      $(newId).slideToggle(300);
+    }
+    else{
+      $('p').slideUp(300);
+      $(newId).slideToggle(300);
+    }
+    prev = id;
+  });
+</script>
+</body>
+</html>
